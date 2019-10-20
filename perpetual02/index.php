@@ -16,8 +16,13 @@
         background: #f8f2d9;
         background-image:url(background.png);
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-attachment:fixed;
         font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
     }
     table{
         border-collapse: collapse;
@@ -30,16 +35,16 @@
     #main{
         width: 1200px;
         height: 850px;
-        position: fixed;
-        top: 140px;
-        left: 500px;
+        position: relative;
+        /* top: 140px; */
+        /* left: 500px; */
     }
     #left{
         width: 1060px;
         height: 780px;
         background-image:url(bg-calender.png);
         position: absolute;
-        top: 0px;
+        top: 100px;
         left: 0px;
         padding-top:50px;
         padding-left:30px;
@@ -47,11 +52,11 @@
         filter: drop-shadow(5px 5px 5px gray);
     }
     #right{
-        width:440px;
-        height:480px;
+        width:438px;
+        height:434px;
         background-image:url(bg-bar.png);
         position:absolute;
-        top: -150px;
+        /* top: -150px; */
         right: 0px;
         color: #5F4B3A;
         padding-top: 160px;
@@ -138,11 +143,11 @@ $sd=[
             <?php
             if($month-1>0){
             ?>
-                <a href="perpetual02.php?year=<?=$year;?>&month=<?=($month-1);?>"><img src="garrow.png" width=30px height=30px></a>
+                <a href="?year=<?=$year;?>&month=<?=($month-1);?>"><img src="garrow.png" width=30px height=30px></a>
             <?php
             }else{
             ?>
-                <a href="perpetual02.php?year=<?=($year-1);?>&month=<?=12;?>"><img src="garrow.png" width=30px height=30px></a>
+                <a href="?year=<?=($year-1);?>&month=<?=12;?>"><img src="garrow.png" width=30px height=30px></a>
             <?php
             }
             ?>
@@ -152,11 +157,11 @@ $sd=[
             <?php
             if($month+1<13){
             ?>
-                <a href="perpetual02.php?year=<?=$year;?>&month=<?=($month+1);?>"><img src="garrow2.png" width=30px height=30px></a>
+                <a href="?year=<?=$year;?>&month=<?=($month+1);?>"><img src="garrow2.png" width=30px height=30px></a>
             <?php
             }else{
             ?>
-                <a href="perpetual02.php?year=<?=($year+1);?>&month=<?=1;?>"><img src="garrow2.png" width=30px height=30px></a>
+                <a href="?year=<?=($year+1);?>&month=<?=1;?>"><img src="garrow2.png" width=30px height=30px></a>
             <?php
             }
             ?>

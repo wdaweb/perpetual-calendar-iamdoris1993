@@ -7,9 +7,19 @@
     <title>perpetual</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <style>
+    *{
+      margin:0; /*消除所有標籤的內距和外邊距 */
+      padding:0;
+      box-sizing:border-box; /*調整所有的標籤的大小不受padding設置影響 */
+    }
     body{
         font-family: 'Nunito', sans-serif;
         background: linear-gradient(to right, #2c3e50, #3498db);
+        height:100vh;  /*設定BODY本身寬高都為滿版*/
+        width:100vw;
+        display:flex;  /*使用flex排版並設定元素置中 */
+        align-items:center;
+        justify-content:center;
     }
     table{
         border-collapse: collapse;
@@ -20,14 +30,14 @@
         text-align: center;
     }
     #main{
-        width: 950px;
+        min-width: 950px;  /*使用min-width可以確保main的寬度不會因為瀏灠器變化而變小*/
         height: 600px;
         background: white;
         border-radius: 1%;
-        margin: auto;
-        margin-top: 100px;
+        /* margin: auto; */
+        /* margin-top: 100px; */
         position:relative;
-        margin-top: 100px;
+        /* margin-top: 100px; */
         position:relative;
         filter: drop-shadow(2px 2px 20px black);
     }
@@ -62,6 +72,14 @@
         height: 12%;
         font-size: 30px;
         color: rgb(75,75,75);
+        display:flex;
+        justify-content:space-between; /*讓元素間自動分配空白*/
+        padding:0 25%; /*利用padding來控制TOP裏的空間*/
+        align-items:center; /*元素垂直置中*/
+        box-sizing:border-box;  /*讓元素的大小不受padding設定的影響*/
+    }
+    #top a{
+      display:flex;  /*讓top裏的 a 標籤自動調整高度到和圖片一樣30x30 */
     }
     #bottom{
         width: 100%;
@@ -147,11 +165,11 @@ $sd=[
             <?php
             if($month-1>0){
             ?>
-                <a href="perpetual01.php?year=<?=$year;?>&month=<?=($month-1);?>"><img src="arrow01.png" width=30px height=30px></a>
+                <a href="?year=<?=$year;?>&month=<?=($month-1);?>"><img src="arrow01.png" width=30px height=30px></a>
             <?php
             }else{
             ?>
-                <a href="perpetual01.php?year=<?=($year-1);?>&month=<?=12;?>"><img src="arrow01.png" width=30px height=30px></a>
+                <a href="?year=<?=($year-1);?>&month=<?=12;?>"><img src="arrow01.png" width=30px height=30px></a>
             <?php
             }
             ?>
@@ -161,11 +179,11 @@ $sd=[
             <?php
             if($month+1<13){
             ?>
-                <a href="perpetual01.php?year=<?=$year;?>&month=<?=($month+1);?>"><img src="arrow02.png" width=30px height=30px></a>
+                <a href="?year=<?=$year;?>&month=<?=($month+1);?>"><img src="arrow02.png" width=30px height=30px></a>
             <?php
             }else{
             ?>
-                <a href="perpetual01.php?year=<?=($year+1);?>&month=<?=1;?>"><img src="arrow02.png" width=30px height=30px></a>
+                <a href="?year=<?=($year+1);?>&month=<?=1;?>"><img src="arrow02.png" width=30px height=30px></a>
             <?php
             }
             ?>
